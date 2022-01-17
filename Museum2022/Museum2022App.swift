@@ -11,7 +11,7 @@ import SwiftUI
 struct Museum2022App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MuseumTabView().environmentObject(MuseumModel())
         }
     }
 }

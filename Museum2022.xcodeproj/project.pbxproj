@@ -8,17 +8,47 @@
 
 /* Begin PBXBuildFile section */
 		558C22922795D38D00821AE4 /* Museum2022App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22912795D38D00821AE4 /* Museum2022App.swift */; };
-		558C22942795D38D00821AE4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22932795D38D00821AE4 /* ContentView.swift */; };
+		558C22942795D38D00821AE4 /* MuseumTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22932795D38D00821AE4 /* MuseumTabView.swift */; };
 		558C22962795D39400821AE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558C22952795D39400821AE4 /* Assets.xcassets */; };
 		558C22992795D39400821AE4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558C22982795D39400821AE4 /* Preview Assets.xcassets */; };
+		558C22A52795D41B00821AE4 /* MuseumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22A42795D41B00821AE4 /* MuseumModel.swift */; };
+		558C22A72795D43C00821AE4 /* Museum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22A62795D43C00821AE4 /* Museum.swift */; };
+		558C22A92795D44E00821AE4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22A82795D44E00821AE4 /* DataService.swift */; };
+		558C22AD2795D49600821AE4 /* MuseumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22AC2795D49600821AE4 /* MuseumDetailView.swift */; };
+		558C22AF2795D4A800821AE4 /* FamousView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22AE2795D4A800821AE4 /* FamousView.swift */; };
+		558C22B12795D4C000821AE4 /* MuseumCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22B02795D4C000821AE4 /* MuseumCardView.swift */; };
+		558C22B32795D4D100821AE4 /* buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22B22795D4D100821AE4 /* buttons.swift */; };
+		558C22B52795D4EA00821AE4 /* UserHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22B42795D4EA00821AE4 /* UserHomeView.swift */; };
+		558C22B72795D4FE00821AE4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22B62795D4FE00821AE4 /* SettingView.swift */; };
+		558C22B92795D51100821AE4 /* ArchieveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22B82795D51100821AE4 /* ArchieveView.swift */; };
+		558C22BB2795D52300821AE4 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22BA2795D52300821AE4 /* FavoritesView.swift */; };
+		558C22BD2795D53D00821AE4 /* WishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22BC2795D53D00821AE4 /* WishView.swift */; };
+		558C22BF2795D54900821AE4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22BE2795D54900821AE4 /* ListView.swift */; };
+		558C22C12795D56600821AE4 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 558C22C02795D56600821AE4 /* data.json */; };
+		558C22C32795D7EF00821AE4 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22C22795D7EF00821AE4 /* BrowseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		558C228E2795D38D00821AE4 /* Museum2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Museum2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558C22912795D38D00821AE4 /* Museum2022App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Museum2022App.swift; sourceTree = "<group>"; };
-		558C22932795D38D00821AE4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		558C22932795D38D00821AE4 /* MuseumTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumTabView.swift; sourceTree = "<group>"; };
 		558C22952795D39400821AE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		558C22982795D39400821AE4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		558C22A42795D41B00821AE4 /* MuseumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumModel.swift; sourceTree = "<group>"; };
+		558C22A62795D43C00821AE4 /* Museum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Museum.swift; sourceTree = "<group>"; };
+		558C22A82795D44E00821AE4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		558C22AC2795D49600821AE4 /* MuseumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumDetailView.swift; sourceTree = "<group>"; };
+		558C22AE2795D4A800821AE4 /* FamousView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamousView.swift; sourceTree = "<group>"; };
+		558C22B02795D4C000821AE4 /* MuseumCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumCardView.swift; sourceTree = "<group>"; };
+		558C22B22795D4D100821AE4 /* buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttons.swift; sourceTree = "<group>"; };
+		558C22B42795D4EA00821AE4 /* UserHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeView.swift; sourceTree = "<group>"; };
+		558C22B62795D4FE00821AE4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		558C22B82795D51100821AE4 /* ArchieveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchieveView.swift; sourceTree = "<group>"; };
+		558C22BA2795D52300821AE4 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		558C22BC2795D53D00821AE4 /* WishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishView.swift; sourceTree = "<group>"; };
+		558C22BE2795D54900821AE4 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		558C22C02795D56600821AE4 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		558C22C22795D7EF00821AE4 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +82,11 @@
 			isa = PBXGroup;
 			children = (
 				558C22912795D38D00821AE4 /* Museum2022App.swift */,
-				558C22932795D38D00821AE4 /* ContentView.swift */,
+				558C22A02795D3C900821AE4 /* Model */,
+				558C22A12795D3D000821AE4 /* ViewModel */,
+				558C22A22795D3DE00821AE4 /* View */,
+				558C229F2795D3C100821AE4 /* Service */,
+				558C22A32795D3E400821AE4 /* Data */,
 				558C22952795D39400821AE4 /* Assets.xcassets */,
 				558C22972795D39400821AE4 /* Preview Content */,
 			);
@@ -65,6 +99,57 @@
 				558C22982795D39400821AE4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		558C229F2795D3C100821AE4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				558C22A82795D44E00821AE4 /* DataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		558C22A02795D3C900821AE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				558C22A62795D43C00821AE4 /* Museum.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		558C22A12795D3D000821AE4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				558C22A42795D41B00821AE4 /* MuseumModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		558C22A22795D3DE00821AE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				558C22932795D38D00821AE4 /* MuseumTabView.swift */,
+				558C22C22795D7EF00821AE4 /* BrowseView.swift */,
+				558C22BA2795D52300821AE4 /* FavoritesView.swift */,
+				558C22B02795D4C000821AE4 /* MuseumCardView.swift */,
+				558C22AE2795D4A800821AE4 /* FamousView.swift */,
+				558C22AC2795D49600821AE4 /* MuseumDetailView.swift */,
+				558C22B22795D4D100821AE4 /* buttons.swift */,
+				558C22B42795D4EA00821AE4 /* UserHomeView.swift */,
+				558C22B62795D4FE00821AE4 /* SettingView.swift */,
+				558C22B82795D51100821AE4 /* ArchieveView.swift */,
+				558C22BC2795D53D00821AE4 /* WishView.swift */,
+				558C22BE2795D54900821AE4 /* ListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		558C22A32795D3E400821AE4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				558C22C02795D56600821AE4 /* data.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558C22992795D39400821AE4 /* Preview Assets.xcassets in Resources */,
+				558C22C12795D56600821AE4 /* data.json in Resources */,
 				558C22962795D39400821AE4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +223,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				558C22942795D38D00821AE4 /* ContentView.swift in Sources */,
+				558C22BF2795D54900821AE4 /* ListView.swift in Sources */,
+				558C22942795D38D00821AE4 /* MuseumTabView.swift in Sources */,
+				558C22B92795D51100821AE4 /* ArchieveView.swift in Sources */,
+				558C22B32795D4D100821AE4 /* buttons.swift in Sources */,
+				558C22B12795D4C000821AE4 /* MuseumCardView.swift in Sources */,
+				558C22BB2795D52300821AE4 /* FavoritesView.swift in Sources */,
+				558C22BD2795D53D00821AE4 /* WishView.swift in Sources */,
+				558C22AF2795D4A800821AE4 /* FamousView.swift in Sources */,
+				558C22C32795D7EF00821AE4 /* BrowseView.swift in Sources */,
+				558C22AD2795D49600821AE4 /* MuseumDetailView.swift in Sources */,
+				558C22A52795D41B00821AE4 /* MuseumModel.swift in Sources */,
 				558C22922795D38D00821AE4 /* Museum2022App.swift in Sources */,
+				558C22B52795D4EA00821AE4 /* UserHomeView.swift in Sources */,
+				558C22A72795D43C00821AE4 /* Museum.swift in Sources */,
+				558C22B72795D4FE00821AE4 /* SettingView.swift in Sources */,
+				558C22A92795D44E00821AE4 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
