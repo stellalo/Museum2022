@@ -12,6 +12,8 @@ import Firebase
 
 class AppViewModel:ObservableObject{
     
+    @EnvironmentObject var model:MuseumModel
+    
     let auth = Auth.auth()
     @Published var signedIn = false
     
@@ -39,7 +41,7 @@ class AppViewModel:ObservableObject{
             }
             //success
             DispatchQueue.main.async {
-               // self?.saveUser()
+                self?.saveUser(name:name)
                 self?.signedIn = true
             }
         }
@@ -48,13 +50,17 @@ class AppViewModel:ObservableObject{
         try? auth.signOut()
         self.signedIn = false
     }
-    //func saveUser(){
-       // if let currentUser = Auth.auth().currentUser{
-         //   let db = Firestore.firestore()
-           // db.collection("Users").document(currentUser.uid)
-            
-        //}
-    //}
+    func saveUser(name:String){
+        if let currentUser = Auth.auth().currentUser{
+            let db = Firestore.firestore()
+            let path = db.collection("users").document(currentUser.uid)
+            //path.setData(["name":name], merge: true)
+            let status = ["visited":false,"favorite":false,"tovisit":false]
+            for count in 0..<model.museums.count{
+                path.setData([model.museums[count].Name:status], merge: true)
+            }
+        }
+    }
 }
 
 struct LoginView:View{
@@ -76,7 +82,6 @@ struct LoginView:View{
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
-        //.environmentObject(MuseumModel())
+        LoginView().environmentObject(AppViewModel()).environmentObject(MuseumModel())
     }
 }

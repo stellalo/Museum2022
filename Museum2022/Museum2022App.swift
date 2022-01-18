@@ -16,7 +16,8 @@ struct Museum2022App: App {
         WindowGroup {
             //first screen you see
             let viewModel = AppViewModel()
-            LoginView().environmentObject(viewModel)
+            //let model = MuseumModel()
+            LoginView().environmentObject(viewModel).environmentObject(MuseumModel())
             
             //MuseumTabView()
               //  .environmentObject(MuseumModel())

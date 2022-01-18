@@ -65,6 +65,6 @@ struct SigninView: View {
 }
 struct SigninView_Previews: PreviewProvider {
     static var previews: some View {
-        SigninView().environmentObject(MuseumModel())
+        SigninView().environmentObject(AppViewModel())
     }
 }
