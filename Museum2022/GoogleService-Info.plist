@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>502072483328-k94jh99uuug7rhi9dl60149argbqq36u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.502072483328-k94jh99uuug7rhi9dl60149argbqq36u</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDPCap26CyK5nKOVKosqAzGJc23EgvalTk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>502072483328</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.stellaylo267.Museum2022</string>
+	<key>PROJECT_ID</key>
+	<string>museum2022-67a00</string>
+	<key>STORAGE_BUCKET</key>
+	<string>museum2022-67a00.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:502072483328:ios:1d59042341116083b682e5</string>
+</dict>
+</plist>

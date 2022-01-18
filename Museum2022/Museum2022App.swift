@@ -6,12 +6,26 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct Museum2022App: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            MuseumTabView().environmentObject(MuseumModel())
+            //first screen you see
+            let viewModel = AppViewModel()
+            LoginView().environmentObject(viewModel)
+            
+            //MuseumTabView()
+              //  .environmentObject(MuseumModel())
         }
+    }
+}
+class AppDelegate:NSObject,UIApplicationDelegate{
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
     }
 }

@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct SettingView: View {
+    
+    @EnvironmentObject var viewModel:AppViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Button {
+            viewModel.signOut()
+            //SigninView()
+        } label: {
+            Text("Sign Out")
+        }
     }
 }
 

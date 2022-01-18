@@ -26,6 +26,12 @@
 		558C22BF2795D54900821AE4 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22BE2795D54900821AE4 /* ListView.swift */; };
 		558C22C12795D56600821AE4 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 558C22C02795D56600821AE4 /* data.json */; };
 		558C22C32795D7EF00821AE4 /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22C22795D7EF00821AE4 /* BrowseView.swift */; };
+		558C22C52795EBEB00821AE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 558C22C42795EBEB00821AE4 /* GoogleService-Info.plist */; };
+		558C22C82795FCA700821AE4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 558C22C72795FCA700821AE4 /* FirebaseAnalytics */; };
+		558C22CA2795FCA700821AE4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 558C22C92795FCA700821AE4 /* FirebaseAuth */; };
+		558C22CC2795FCA700821AE4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 558C22CB2795FCA700821AE4 /* FirebaseFirestore */; };
+		558C22CE279606EC00821AE4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22CD279606EC00821AE4 /* LoginView.swift */; };
+		558C22D0279632EB00821AE4 /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C22CF279632EA00821AE4 /* SigninView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +55,9 @@
 		558C22BE2795D54900821AE4 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		558C22C02795D56600821AE4 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		558C22C22795D7EF00821AE4 /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		558C22C42795EBEB00821AE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		558C22CD279606EC00821AE4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		558C22CF279632EA00821AE4 /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558C22C82795FCA700821AE4 /* FirebaseAnalytics in Frameworks */,
+				558C22CA2795FCA700821AE4 /* FirebaseAuth in Frameworks */,
+				558C22CC2795FCA700821AE4 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +100,7 @@
 				558C229F2795D3C100821AE4 /* Service */,
 				558C22A32795D3E400821AE4 /* Data */,
 				558C22952795D39400821AE4 /* Assets.xcassets */,
+				558C22C42795EBEB00821AE4 /* GoogleService-Info.plist */,
 				558C22972795D39400821AE4 /* Preview Content */,
 			);
 			path = Museum2022;
@@ -128,6 +141,8 @@
 		558C22A22795D3DE00821AE4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				558C22CD279606EC00821AE4 /* LoginView.swift */,
+				558C22CF279632EA00821AE4 /* SigninView.swift */,
 				558C22932795D38D00821AE4 /* MuseumTabView.swift */,
 				558C22C22795D7EF00821AE4 /* BrowseView.swift */,
 				558C22BA2795D52300821AE4 /* FavoritesView.swift */,
@@ -168,6 +183,11 @@
 			dependencies = (
 			);
 			name = Museum2022;
+			packageProductDependencies = (
+				558C22C72795FCA700821AE4 /* FirebaseAnalytics */,
+				558C22C92795FCA700821AE4 /* FirebaseAuth */,
+				558C22CB2795FCA700821AE4 /* FirebaseFirestore */,
+			);
 			productName = Museum2022;
 			productReference = 558C228E2795D38D00821AE4 /* Museum2022.app */;
 			productType = "com.apple.product-type.application";
@@ -196,6 +216,9 @@
 				Base,
 			);
 			mainGroup = 558C22852795D38D00821AE4;
+			packageReferences = (
+				558C22C62795FCA700821AE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 558C228F2795D38D00821AE4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -211,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558C22992795D39400821AE4 /* Preview Assets.xcassets in Resources */,
+				558C22C52795EBEB00821AE4 /* GoogleService-Info.plist in Resources */,
 				558C22C12795D56600821AE4 /* data.json in Resources */,
 				558C22962795D39400821AE4 /* Assets.xcassets in Resources */,
 			);
@@ -225,6 +249,7 @@
 			files = (
 				558C22BF2795D54900821AE4 /* ListView.swift in Sources */,
 				558C22942795D38D00821AE4 /* MuseumTabView.swift in Sources */,
+				558C22D0279632EB00821AE4 /* SigninView.swift in Sources */,
 				558C22B92795D51100821AE4 /* ArchieveView.swift in Sources */,
 				558C22B32795D4D100821AE4 /* buttons.swift in Sources */,
 				558C22B12795D4C000821AE4 /* MuseumCardView.swift in Sources */,
@@ -233,6 +258,7 @@
 				558C22AF2795D4A800821AE4 /* FamousView.swift in Sources */,
 				558C22C32795D7EF00821AE4 /* BrowseView.swift in Sources */,
 				558C22AD2795D49600821AE4 /* MuseumDetailView.swift in Sources */,
+				558C22CE279606EC00821AE4 /* LoginView.swift in Sources */,
 				558C22A52795D41B00821AE4 /* MuseumModel.swift in Sources */,
 				558C22922795D38D00821AE4 /* Museum2022App.swift in Sources */,
 				558C22B52795D4EA00821AE4 /* UserHomeView.swift in Sources */,
@@ -439,6 +465,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		558C22C62795FCA700821AE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		558C22C72795FCA700821AE4 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558C22C62795FCA700821AE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		558C22C92795FCA700821AE4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558C22C62795FCA700821AE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		558C22CB2795FCA700821AE4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558C22C62795FCA700821AE4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 558C22862795D38D00821AE4 /* Project object */;
 }
