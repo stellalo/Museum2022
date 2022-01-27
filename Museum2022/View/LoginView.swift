@@ -54,10 +54,33 @@ class AppViewModel:ObservableObject{
         if let currentUser = Auth.auth().currentUser{
             let db = Firestore.firestore()
             let path = db.collection("users").document(currentUser.uid)
+            path.collection("museums")
             //path.setData(["name":name], merge: true)
-            let status = ["visited":false,"favorite":false,"tovisit":false]
-            for count in 0..<model.museums.count{
-                path.setData([model.museums[count].Name:status], merge: true)
+        }
+    }
+    func addData(museum:Museum,status:String,temp:Bool){
+        if let currentUser = Auth.auth().currentUser{
+            let db = Firestore.firestore()
+            let path = db.collection("users").document(currentUser.uid).collection("museums").document(museum.Name)
+            path.setData([status:temp],merge: true)
+        }
+    }
+    func getData(museum:Museum){
+        if let currentUser = Auth.auth().currentUser{
+            let db = Firestore.firestore()
+            //let path = db.collection("users").document(currentUser.uid).collection("museums")
+            let docRef = db.collection("users").document(currentUser.uid).collection("museums").document(museum.Name)
+            docRef.getDocument(source: .cache) { document, error in
+                if let document = document{
+                    DispatchQueue.main.async {
+                        
+                        museum.visited = (document.get("visited") != nil)
+                        museum.favorite = (document.get("favorite") != nil)
+                        museum.tovisit = (document.get("wish") != nil)
+                        
+                    }
+                    
+                }
             }
         }
     }
@@ -65,6 +88,7 @@ class AppViewModel:ObservableObject{
 
 struct LoginView:View{
     @EnvironmentObject var viewModel:AppViewModel
+    @EnvironmentObject var model:MuseumModel
     
     var body:some View{
         NavigationView{

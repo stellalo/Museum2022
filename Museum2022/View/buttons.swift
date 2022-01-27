@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct buttons: View {
     
     var museum:Museum
+    @EnvironmentObject var viewModel:AppViewModel
     @State var visitIcon = "figure.walk.circle"
     @State var heart = "heart"
     @State var toVisit = "cart.circle"
@@ -17,7 +19,9 @@ struct buttons: View {
     var body: some View {
         HStack(spacing:60){
                 Button(action: {
+                    //viewModel.getData(museum: museum,status:"visited")
                     museum.visited.toggle()
+                    viewModel.addData(museum: museum,status:"visited",temp:museum.visited)
                     if(museum.visited){
                         visitIcon = "figure.walk.circle.fill"
                     }
@@ -33,7 +37,9 @@ struct buttons: View {
                     }
                 })
                 Button(action: {
+                   // viewModel.getData(museum: museum,status:"favorite")
                     museum.favorite.toggle()
+                    viewModel.addData(museum: museum,status:"favorite",temp:museum.favorite)
                     if(museum.favorite){
                         heart = "heart.fill"
                     }
@@ -49,7 +55,9 @@ struct buttons: View {
                     }
                 })
                 Button(action: {
+                    //viewModel.getData(museum: museum,status:"wish")
                     museum.tovisit.toggle()
+                    viewModel.addData(museum: museum,status:"wish",temp:museum.tovisit)
                     if (museum.tovisit){
                         toVisit = "cart.circle.fill"
                     }
@@ -63,32 +71,53 @@ struct buttons: View {
                         Text("Wish List").foregroundColor(.black)
                     }
                 })
-        }.onAppear {
-            if(museum.visited){
-                visitIcon = "figure.walk.circle.fill"
-            }
-            else{
-                visitIcon = "figure.walk.circle"
-            }
-            if(museum.favorite){
-                heart = "heart.fill"
-            }
-            else{
-                heart = "heart"
-            }
-            if (museum.tovisit){
-                toVisit = "cart.circle.fill"
-            }
-            else{
-                toVisit = "cart.circle"
-            }
         }
+        .onAppear {
+            if let currentUser = Auth.auth().currentUser{
+                let db = Firestore.firestore()
+                //let path = db.collection("users").document(currentUser.uid).collection("museums")
+                let docRef = db.collection("users").document(currentUser.uid).collection("museums").document(museum.Name)
+                docRef.getDocument(source: .cache) { document, error in
+                    if let document = document{
+                        DispatchQueue.main.async {
+                            //document.get(status)
+                            
+                            museum.visited = (document.get("visited") != nil)
+                            museum.favorite = (document.get("favorite") != nil)
+                            museum.tovisit = (document.get("wish") != nil)
+                            
+                            if(museum.visited){
+                                visitIcon = "figure.walk.circle.fill"
+                            }
+                            else{
+                                visitIcon = "figure.walk.circle"
+                            }
+                            if(museum.favorite){
+                                self.heart = "heart.fill"
+                            }
+                            else{
+                                self.heart = "heart"
+                            }
+                            if (museum.tovisit){
+                                self.toVisit = "cart.circle.fill"
+                            }
+                            else{
+                                self.toVisit = "cart.circle"
+                            }
+
+                        }
+                        
+                    }
+                }
+            }
+                    }
+          
     }
 }
 
 struct buttons_Previews: PreviewProvider {
     static var previews: some View {
         let model = MuseumModel()
-        buttons(museum: model.museums[0])
+        buttons(museum: model.museums[0]).environmentObject(AppViewModel())
     }
 }
