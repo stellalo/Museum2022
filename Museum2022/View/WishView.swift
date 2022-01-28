@@ -29,7 +29,7 @@ struct WishView: View {
                     }
                 }
             }
-        }
+        }.navigationBarTitle("",displayMode:.inline)
     }
 }
 

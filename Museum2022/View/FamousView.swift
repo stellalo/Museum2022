@@ -35,7 +35,6 @@ struct FamousView: View {
                                 Text(museum.famous[index].location ?? "").font(.footnote)
                             }
                         }
-                       // Text("This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.").font(.footnote)
                     }
                 }
                 Spacer()

@@ -29,7 +29,7 @@ struct ArchieveView: View {
                             }
                         }
                 }
-            }
+            }.navigationBarTitle("",displayMode: .inline)
     }
 }
 

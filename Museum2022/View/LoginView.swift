@@ -74,15 +74,12 @@ class AppViewModel:ObservableObject{
                     if (document.get("visited") != nil){
                         museum.visited = (document.get("visited"))! as! Bool
                     }
-                    //museum.visited = (document.get("visited"))
                     if (document.get("favorite") != nil){
                         museum.favorite = (document.get("favorite"))! as! Bool
                     }
-                    //museum.favorite = (document.get("favorite") != nil)
                     if (document.get("wish") != nil){
                         museum.tovisit = (document.get("wish"))! as! Bool
                     }
-                    //museum.tovisit = (document.get("wish") != nil)
                 }
             }
         }

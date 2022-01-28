@@ -27,10 +27,9 @@ struct FavoritesView: View {
                             }
                             )
                         }
-                        
                 }
             }
-        }
+        }.navigationBarTitle("", displayMode: .inline)
     }
 }
 

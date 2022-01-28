@@ -61,10 +61,6 @@ struct UserHomeView: View {
                     let docRef = db.collection("users").document(currentUser.uid).collection("museums").document(m.Name)
                     docRef.getDocument(source: .cache) { document, error in
                         if let document = document{
-                            //DispatchQueue.main.async {
-                                //m.visited = (document.get("visited") != nil)
-                                //m.favorite = (document.get("favorite") != nil)
-                                //m.tovisit = (document.get("wish") != nil)
                             if (document.get("visited") != nil){
                                 m.visited = (document.get("visited"))! as! Bool
                             }
@@ -74,7 +70,6 @@ struct UserHomeView: View {
                             if (document.get("wish") != nil){
                                 m.tovisit = (document.get("wish"))! as! Bool
                             }
-                            //}
                         }
                     }
                 }
