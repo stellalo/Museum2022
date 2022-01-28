@@ -68,18 +68,21 @@ class AppViewModel:ObservableObject{
     func getData(museum:Museum){
         if let currentUser = Auth.auth().currentUser{
             let db = Firestore.firestore()
-            //let path = db.collection("users").document(currentUser.uid).collection("museums")
             let docRef = db.collection("users").document(currentUser.uid).collection("museums").document(museum.Name)
             docRef.getDocument(source: .cache) { document, error in
                 if let document = document{
-                    DispatchQueue.main.async {
-                        
-                        museum.visited = (document.get("visited") != nil)
-                        museum.favorite = (document.get("favorite") != nil)
-                        museum.tovisit = (document.get("wish") != nil)
-                        
+                    if (document.get("visited") != nil){
+                        museum.visited = (document.get("visited"))! as! Bool
                     }
-                    
+                    //museum.visited = (document.get("visited"))
+                    if (document.get("favorite") != nil){
+                        museum.favorite = (document.get("favorite"))! as! Bool
+                    }
+                    //museum.favorite = (document.get("favorite") != nil)
+                    if (document.get("wish") != nil){
+                        museum.tovisit = (document.get("wish"))! as! Bool
+                    }
+                    //museum.tovisit = (document.get("wish") != nil)
                 }
             }
         }

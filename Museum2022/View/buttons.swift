@@ -19,7 +19,6 @@ struct buttons: View {
     var body: some View {
         HStack(spacing:60){
                 Button(action: {
-                    //viewModel.getData(museum: museum,status:"visited")
                     museum.visited.toggle()
                     viewModel.addData(museum: museum,status:"visited",temp:museum.visited)
                     if(museum.visited){
@@ -71,47 +70,44 @@ struct buttons: View {
                         Text("Wish List").foregroundColor(.black)
                     }
                 })
-        }
-        .onAppear {
+        }.onAppear {
             if let currentUser = Auth.auth().currentUser{
                 let db = Firestore.firestore()
-                //let path = db.collection("users").document(currentUser.uid).collection("museums")
                 let docRef = db.collection("users").document(currentUser.uid).collection("museums").document(museum.Name)
                 docRef.getDocument(source: .cache) { document, error in
                     if let document = document{
-                        DispatchQueue.main.async {
-                            //document.get(status)
-                            
-                            museum.visited = (document.get("visited") != nil)
-                            museum.favorite = (document.get("favorite") != nil)
-                            museum.tovisit = (document.get("wish") != nil)
-                            
-                            if(museum.visited){
-                                visitIcon = "figure.walk.circle.fill"
-                            }
-                            else{
-                                visitIcon = "figure.walk.circle"
-                            }
-                            if(museum.favorite){
-                                self.heart = "heart.fill"
-                            }
-                            else{
-                                self.heart = "heart"
-                            }
-                            if (museum.tovisit){
-                                self.toVisit = "cart.circle.fill"
-                            }
-                            else{
-                                self.toVisit = "cart.circle"
-                            }
-
+                        if (document.get("visited") != nil){
+                            museum.visited = (document.get("visited"))! as! Bool
                         }
-                        
+                        if (document.get("favorite") != nil){
+                            museum.favorite = (document.get("favorite"))! as! Bool
+                        }
+                        if (document.get("wish") != nil){
+                            museum.tovisit = (document.get("wish"))! as! Bool
+                        }
                     }
                 }
             }
-                    }
-          
+            if(museum.visited){
+                visitIcon = "figure.walk.circle.fill"
+            }
+            else{
+                visitIcon = "figure.walk.circle"
+            }
+            if(museum.favorite){
+                self.heart = "heart.fill"
+            }
+            else{
+                self.heart = "heart"
+            }
+            if (museum.tovisit){
+                self.toVisit = "cart.circle.fill"
+            }
+            else{
+                self.toVisit = "cart.circle"
+            }
+        }
+    
     }
 }
 

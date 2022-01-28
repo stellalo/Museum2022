@@ -10,7 +10,7 @@ import SwiftUI
 struct MuseumTabView: View {
     
     @EnvironmentObject var model:MuseumModel
-    @EnvironmentObject var viewModel:AppViewModel
+    //@EnvironmentObject var viewModel:AppViewModel
     
     var body: some View {
         TabView{
@@ -26,17 +26,13 @@ struct MuseumTabView: View {
                 Image(systemName: "person.crop.circle.fill")
                 Text("Home")
             }
-        }.onAppear {
-            for m in model.museums{
-                viewModel.getData(museum: m)
-            }
-            
         }
     }
 }
 
 struct MuseumTabView_Previews: PreviewProvider {
     static var previews: some View {
-        MuseumTabView().environmentObject(AppViewModel()).environmentObject(MuseumModel())
+        MuseumTabView().environmentObject(MuseumModel())
+        //.environmentObject(AppViewModel())
     }
 }

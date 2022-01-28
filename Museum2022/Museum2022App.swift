@@ -19,8 +19,6 @@ struct Museum2022App: App {
             //let model = MuseumModel()
             LoginView().environmentObject(viewModel).environmentObject(MuseumModel())
             
-            //MuseumTabView()
-              //  .environmentObject(MuseumModel())
         }
     }
 }

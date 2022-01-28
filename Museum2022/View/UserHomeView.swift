@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
 
 struct UserHomeView: View {
     
     @EnvironmentObject var model:MuseumModel
+    @EnvironmentObject var viewModel:AppViewModel
     @State var showSetting = false
     
     var body: some View {
@@ -51,12 +54,37 @@ struct UserHomeView: View {
                     Spacer()
                 }.navigationBarTitle("").navigationBarHidden(true)
             }
+        }.onAppear {
+            for m in model.museums{
+                if let currentUser = Auth.auth().currentUser{
+                    let db = Firestore.firestore()
+                    let docRef = db.collection("users").document(currentUser.uid).collection("museums").document(m.Name)
+                    docRef.getDocument(source: .cache) { document, error in
+                        if let document = document{
+                            //DispatchQueue.main.async {
+                                //m.visited = (document.get("visited") != nil)
+                                //m.favorite = (document.get("favorite") != nil)
+                                //m.tovisit = (document.get("wish") != nil)
+                            if (document.get("visited") != nil){
+                                m.visited = (document.get("visited"))! as! Bool
+                            }
+                            if (document.get("favorite") != nil){
+                                m.favorite = (document.get("favorite"))! as! Bool
+                            }
+                            if (document.get("wish") != nil){
+                                m.tovisit = (document.get("wish"))! as! Bool
+                            }
+                            //}
+                        }
+                    }
+                }
             }
         }
+    }
 }
 
 struct UserHomeView_Previews: PreviewProvider {
     static var previews: some View {
-        UserHomeView()
+        UserHomeView().environmentObject(AppViewModel())
     }
 }
